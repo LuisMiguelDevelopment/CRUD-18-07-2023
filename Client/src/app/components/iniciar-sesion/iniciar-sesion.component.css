@@ -1,0 +1,36 @@
+
+.iniciar-sesion{
+   display: flex;
+   justify-content: center;
+   margin-top: 10%;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    color: blueviolet;
+    background-color: white;
+    padding:10px 10px 10px 10px;
+    border-radius: 15px;
+    width: 30%;
+    height: auto;
+}
+
+.email{
+    margin-top: 15px;
+}
+.btn{ 
+    margin-top: 20px;
+    margin-left: 41%;
+    background-color: blueviolet;
+    color: white;
+}
+
+a ,p{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    color: blueviolet;
+}
