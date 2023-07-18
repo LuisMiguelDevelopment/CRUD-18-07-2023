@@ -1,7 +1,7 @@
 <div class="global">
-    <div class="iniciar-sesion">
-        <form #frmLogin="ngForm" (ngSubmit)="Login(frmLogin)">
-            <h1>Iniciar sesion</h1>
+    <div class="Crear">
+        <form #frmRegister="ngForm" (ngSubmit)="Registro(frmRegister)">
+            <h1>Crear cuenta</h1> 
             <div class="dog">
               <div class="ears"></div>
               
@@ -31,15 +31,18 @@
               </div>
             </div>
             <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label email">Nombre</label>
+              <input type="email" class="form-control" id="Nombre" name="Nombre" aria-describedby="emailHelp" ngModel required>
+            </div>
+            <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label email">Correo</label>
-              <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp"  ngModel required>
+              <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp" ngModel required>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="Contrasena" name="Contrasena"  ngModel required>
+              <input type="password" class="form-control" id="Contrasena" name="Contrasena" ngModel required>
             </div>
-            <button type="submit" class="btn ">Iniciar</button>
-            <a routerLink="/crear-usuario"><p>crear cuenta</p></a>
+            <button type="submit" class="btn ">Crear</button>
           </form>
     </div>
 </div>

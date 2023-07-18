@@ -1,50 +1,39 @@
 
-.iniciar-sesion{
-   display: flex;
-   justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-h1{
-    text-align: center;
-}
-
-form{
-    color: blueviolet;
-    background-color: white;
-    padding:10px 10px 10px 10px;
-    border-radius: 15px;
-    width: 30%;
-    height: auto;
-}
-
-.email{
-    margin-top: 15px;
-}
-.btn{ 
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    background-color: rgb(138, 43, 226);
-    color: white;
-}
-
-a ,p{
-    text-align: center;
-    text-decoration: none;
-    margin-top: 10px;
-    color: blueviolet;
-}
+.Crear{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+ 
+ h1{
+     text-align: center;
+ }
+ 
+ form{
+     color: blueviolet;
+     background-color: white;
+     padding:10px 10px 10px 10px;
+     border-radius: 15px;
+     width: 30%;
+     height: auto;
+ }
+ 
+ .email{
+     margin-top: 15px;
+ }
+ .btn{ 
+     margin-top: 20px;
+     margin-left: auto;
+     margin-right: auto;
+     display: block;
+     background-color: blueviolet;
+     color: white;
+ }
+ 
 
 
-
-
-/*Perrito*/
-
-
-html, body {
+ html, body {
     background:#5a076b;
     height: 100%;
     width: 100%;
@@ -366,3 +355,5 @@ html, body {
     }
   }
   
+
+ 
