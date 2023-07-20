@@ -1,45 +1,45 @@
 <div class="global">
-    <div class="iniciar-sesion">
-        <form #frmLogin="ngForm" (ngSubmit)="Login(frmLogin)">
-            <h1>Iniciar sesion</h1>
-            <div class="dog">
-              <div class="ears"></div>
-              
-              <div class="body">
-                <div class="eyes"></div>
-                <div class="beard">
-                  <div class="mouth">
-                    <div class="tongue"></div>
-                  </div>
-                </div>
-                <div class="belt">
-                  <div class="locket"></div>
-                  <div class="dot dot1"></div>
-                  <div class="dot dot2"></div>
-                  <div class="dot dot3"></div>
-                  <div class="dot dot4"></div>
-                  <div class="tag"></div>
-                </div>
-                <div class="stomach">
-                </div>
-                <div class="legs">
-                  <div class="left"></div>
-                  <div class="right"></div>
-                </div>
-              </div>
-              <div class="tail">
-              </div>
+  <div class="iniciar-sesion">
+    <form #frmLogin="ngForm" (ngSubmit)="Login(frmLogin)">
+      <h1>Iniciar sesion</h1>
+      <div class="dog">
+        <div class="ears"></div>
+        
+        <div class="body">
+          <div class="eyes"></div>
+          <div class="beard">
+            <div class="mouth">
+              <div class="tongue"></div>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label email">Correo</label>
-              <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp"  ngModel required>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="Contrasena" name="Contrasena"  ngModel required>
-            </div>
-            <button type="submit" class="btn ">Iniciar</button>
-            <a routerLink="/crear-usuario"><p>crear cuenta</p></a>
-          </form>
-    </div>
+          </div>
+          <div class="belt">
+            <div class="locket"></div>
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+            <div class="tag"></div>
+          </div>
+          <div class="stomach">
+          </div>
+          <div class="legs">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="tail">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label email">Correo</label>
+        <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp" ngModel required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="Contrasena" name="Contrasena" ngModel required>
+      </div>
+      <button type="submit" class="btn">Iniciar</button>
+      <a routerLink="/crear-usuario"><p>Crear cuenta</p></a>
+      </form>
+  </div>
 </div>
