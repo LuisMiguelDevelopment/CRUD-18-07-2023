@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { UsuarioServiceService } from 'src/app/services/usuario-service.service';
 
 @Component({
@@ -8,11 +8,11 @@ import { UsuarioServiceService } from 'src/app/services/usuario-service.service'
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit{
-userId:string='';
+userId:number=0;
 usuario:any;
 
 
-constructor(private route : ActivatedRoute, private _usuarioService : UsuarioServiceService) {}
+constructor(private route : ActivatedRoute, private _usuarioService : UsuarioServiceService ,private router : Router) {}
 
 ngOnInit(): void {
   this.userId = this.route.snapshot.params['id'];
@@ -28,6 +28,11 @@ perfilUsuario():void{
       console.log(error)
     }
   )
+}
+
+cerrarSesion():void{
+  this._usuarioService.cerrarSesion();
+  this.router.navigate(['/iniciar-sesion'])
 }
 
 

@@ -42,6 +42,7 @@ exports.login = async (req, res , next)=>{
                 expiresIn :expireIn
             });
             const dataUser ={
+                id: user.id,
                 Nombre: user.Nombre,
                 Correo: user.Correo,
                 Contrasena: user.Contrasena

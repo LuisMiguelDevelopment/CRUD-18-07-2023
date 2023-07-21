@@ -16,8 +16,10 @@ export class CrearUserComponent implements OnInit {
 
   Registro(form:any){
     this._usuarioService.registrar(form.value).subscribe(res=>{
-     this.router.navigateByUrl('/perfil')
+     this.router.navigateByUrl('/iniciar-sesion')
     });
   }
+
+  
 
 }

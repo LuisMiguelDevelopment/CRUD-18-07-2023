@@ -1,5 +1,31 @@
-<div *ngIf="usuario">
-    <h2>{{ usuario.Nombre }}</h2>
-    <p>Correo: {{ usuario.Correo }}</p>
-    
+
+<div class="perfil">
+  <div class="conjunto" *ngIf="usuario">
+    <div class="info">
+      <div class="cat">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </div>
+      <h2>Nombre</h2>
+      <p>{{ usuario.Nombre }}</p>
+      <h2>Correo</h2>
+      <p>{{ usuario.Correo }}</p>
+      <button type="submit" class="btn" (click)="cerrarSesion()">Cerrar sesíon</button>
+    </div>   
   </div>
+</div>
+
+
+
+
+
+

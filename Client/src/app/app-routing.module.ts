@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'iniciar-sesion'},
   {path:'iniciar-sesion', component:IniciarSesionComponent},
   {path:'crear-usuario', component:CrearUserComponent},
-  {path:'perfil', component:PerfilComponent}
+  {path:'perfil/:id', component:PerfilComponent}
 ];
 
 @NgModule({

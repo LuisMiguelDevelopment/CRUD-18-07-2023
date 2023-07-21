@@ -44,6 +44,7 @@
     position: relative;
     left: 50%;
     top: 10%;
+    margin-top: 20px;
     transform: translate(-50%);
   }
   

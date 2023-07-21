@@ -19,11 +19,24 @@ export class UsuarioServiceService {
 
   constructor(private http: HttpClient ,private location:Location , private router:Router) { }
 
+  private idUsuario = new BehaviorSubject<number>(0);
+
+  getId():Observable<number>{
+    return this.idUsuario.asObservable();
+  }
+
+  setId(id:number){
+    this.idUsuario.next(id);
+  }
+
+
   registrar(user:Usuario):Observable<JwtResponse>{
     return this.http.post<JwtResponse>(this.url,user).pipe(
       tap((res : JwtResponse)=>{
         if(res && res.dataUser?.Nombre){
+          const id = Number(res.dataUser.id)
           this.saveToken(res.accessToken, res.expireIn);
+          this.setId(id)
           this.router.navigateByUrl('/perfil')
           console.log(res);
         }
@@ -34,8 +47,10 @@ export class UsuarioServiceService {
   login(user:Usuario):Observable<JwtResponse>{
     return this.http.post<JwtResponse>(this.url2, user).pipe(tap(
       (res:JwtResponse)=>{
-        if(res){
+        if(res && res.dataUser?.id){
+          const id = Number(res.dataUser.id)
           this.saveToken(res.accessToken, res.expireIn );
+          this.setId(id)
           console.log(res);
           this.router.navigateByUrl('/perfil')
         }
@@ -57,12 +72,19 @@ export class UsuarioServiceService {
 
   
 
-  getPerfil(id: string): Observable<any> {
+  getPerfil(id: number): Observable<any> {
     const urlPerfil = `${this.url3}${id}`;
     console.log('ID:', id);
     console.log('URL:', urlPerfil);
     return this.http.get<any>(urlPerfil);
   }
+
+  cerrarSesion(){
+    this.token ="";
+    localStorage.removeItem("ACCESS_TOKEN");
+    localStorage.removeItem("EXPIRE_IN")
+  }
+
 }
 
 

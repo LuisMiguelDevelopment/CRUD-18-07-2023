@@ -1,21 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioServiceService } from 'src/app/services/usuario-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-iniciar-sesion',
   templateUrl: './iniciar-sesion.component.html',
   styleUrls: ['./iniciar-sesion.component.css']
 })
-export class IniciarSesionComponent implements OnInit{
+export class IniciarSesionComponent implements OnInit {
 
-  constructor(private _loginService: UsuarioServiceService, private router:Router) {}
+  id:number = 0;
 
-  ngOnInit(): void {}
+  constructor(private _loginService: UsuarioServiceService, private route: ActivatedRoute, private router: Router) { }
 
-  Login(form:any){
-    this._loginService.login(form.value).subscribe(res=>{
-      this.router.navigateByUrl('/perfil')
-    })
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = +params['id'];
+    });
+  }
+
+  Login(frmLogin: NgForm) {
+    this._loginService.login(frmLogin.value).subscribe(
+      (res) => {
+        // Redirigir al componente PerfilComponent con el ID en la URL
+        this.router.navigateByUrl(`/perfil/${res.dataUser.id}`);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
