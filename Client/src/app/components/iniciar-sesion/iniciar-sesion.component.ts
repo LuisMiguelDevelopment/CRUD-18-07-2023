@@ -23,7 +23,6 @@ export class IniciarSesionComponent implements OnInit {
   Login(frmLogin: NgForm) {
     this._loginService.login(frmLogin.value).subscribe(
       (res) => {
-        // Redirigir al componente PerfilComponent con el ID en la URL
         this.router.navigateByUrl(`/perfil/${res.dataUser.id}`);
       },
       (error) => {

@@ -7,7 +7,7 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { FormsModule } from '@angular/forms';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { CrearUserComponent } from './components/crear-user/crear-user.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,8 @@ import { CrearUserComponent } from './components/crear-user/crear-user.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

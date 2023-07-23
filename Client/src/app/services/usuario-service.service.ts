@@ -13,6 +13,7 @@ export class UsuarioServiceService {
   url = 'http://localhost:4000/api/usuarios/crear/'
   url2 ='http://localhost:4000/api/usuarios/login/'
   url3 ='http://localhost:4000/api/usuarios/perfil/'
+  url4 = 'http://localhost:4000/api/usuarios/perfil/'
 
   authSubject = new BehaviorSubject(false);
   private token : string= '';
@@ -38,7 +39,7 @@ export class UsuarioServiceService {
           this.saveToken(res.accessToken, res.expireIn);
           this.setId(id)
           this.router.navigateByUrl('/perfil')
-          console.log(res);
+          
         }
       })
     )
@@ -51,7 +52,6 @@ export class UsuarioServiceService {
           const id = Number(res.dataUser.id)
           this.saveToken(res.accessToken, res.expireIn );
           this.setId(id)
-          console.log(res);
           this.router.navigateByUrl('/perfil')
         }
       }
@@ -74,8 +74,6 @@ export class UsuarioServiceService {
 
   getPerfil(id: number): Observable<any> {
     const urlPerfil = `${this.url3}${id}`;
-    console.log('ID:', id);
-    console.log('URL:', urlPerfil);
     return this.http.get<any>(urlPerfil);
   }
 
@@ -84,6 +82,12 @@ export class UsuarioServiceService {
     localStorage.removeItem("ACCESS_TOKEN");
     localStorage.removeItem("EXPIRE_IN")
   }
+
+  editarUsuario(id:string , usuario :Usuario):Observable<any>{
+    return this.http.put(this.url4 +id, usuario)
+    
+  }
+
 
 }
 

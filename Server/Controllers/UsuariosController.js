@@ -76,3 +76,26 @@ exports.perfil = async (req, res, next) => {
       res.status(500).json({ error: 'Error en el servidor' });
     }
   };
+
+  exports.actualizarUsuario = async (req , res)=>{
+    try {
+        const{Nombre, Correo } = req.body;
+        let usuario = await Usuario.findById(req.params.id)
+
+        if(!usuario){
+            res.status(500).send('El usuario no existe');
+        }else{
+            usuario.Nombre =  Nombre,
+            usuario.Correo = Correo
+
+            usuario = await Usuario.findOneAndUpdate(
+                {_id:req.params.id},usuario,{new:true})
+
+                res.json(usuario);
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send('Error')
+    }
+  }

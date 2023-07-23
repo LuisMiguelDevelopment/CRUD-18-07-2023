@@ -20,7 +20,28 @@
       <h2>Correo</h2>
       <p>{{ usuario.Correo }}</p>
       <button type="submit" class="btn" (click)="cerrarSesion()">Cerrar sesíon</button>
+      <button type="submit" class="btn" id="btn-abrir-modal" (click)="openModal()">Editar Perfil</button>
     </div>   
+  </div>
+  <div id="modal" class="modal" *ngIf="modalSwitch == true">
+    <div class="formulario">
+      
+    </div>
+    <form [formGroup]="usuarioForm" >
+      <i class="fa-solid fa-arrow-left" style="color: #611494;"  (click)="cerrarModal()"></i>
+        <h1>Editar Perfil</h1> 
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label email">Nombre</label>
+          <input type="email" class="form-control" id="Nombre" name="Nombre" aria-describedby="emailHelp" formControlName="Nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label email">Correo</label>
+          <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp" formControlName="Correo" required>
+        </div>
+        <button type="submit" class="btn btn-form-editar" (click)="editarUsuario()">Editar</button>
+        
+      </form>
+   
   </div>
 </div>
 
